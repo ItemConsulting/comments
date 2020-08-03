@@ -115,25 +115,6 @@ const createCssPlugin = () => (
   })
 );
 
-// LESS
-function addLessSupport(cfg) {
-  const rule = {
-    test: /\.less$/,
-    use: [
-      ...createDefaultCssLoaders(),
-      {loader: 'less-loader', options: {sourceMap: !isProd}},
-    ]
-  };
-
-  const plugin = createCssPlugin();
-
-  return R.pipe(
-    addRule(rule),
-    addPlugin(plugin),
-    appendExtensions(['.less', '.css'])
-  )(cfg);
-}
-
 // SASS & SCSS
 function addSassSupport(cfg) {
   const rule = {
@@ -176,7 +157,6 @@ function addFontSupport(cfg) {
 module.exports = R.pipe(
   addBabelSupport,
   addTypeScriptSupport,
-  addLessSupport,
   addSassSupport,
   addFontSupport
 )(config);
