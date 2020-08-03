@@ -77,14 +77,12 @@ processResources {
     exclude '**/*.ts'
     exclude 'assets/js/**/*.js'
     include 'assets/js/bundle.js'
-    exclude 'assets/styles/**/*.less'
     exclude 'assets/styles/**/*.sass'
     exclude 'assets/styles/**/*.scss'
     includeEmptyDirs false
 }
 
 jar {
-    exclude 'assets/styles/**/*.less'
     exclude 'assets/styles/**/*.sass'
     exclude 'assets/styles/**/*.scss'
     exclude 'assets/styles/**/*.js'
