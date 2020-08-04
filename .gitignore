@@ -1,6 +1,6 @@
 ### Enonic CLI ###
 enonic/.enonic
-
+enonic/src/main/resources/assets/design-system
 ### OSX ###
 .DS_Store
 .AppleDouble
@@ -29,8 +29,8 @@ Temporary Items
 .apdisk
 
 ### Gradle ###
-.gradle
-build/
+enonic/.gradle
+enonic/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
