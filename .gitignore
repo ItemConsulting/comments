@@ -100,3 +100,8 @@ enonic/npm-debug.log
 
 ### Project ###
 *.map
+
+### Client ###
+client/node_modules
+client/dist
+client/build
