@@ -70,34 +70,6 @@ function addTypeScriptSupport(cfg) {
   )(cfg);
 }
 
-// BABEL
-function addBabelSupport(cfg) {
-  const rule = {
-    test: /\.jsx?$/,
-    exclude: /node_modules/,
-    loader: 'babel-loader',
-    options: {
-      babelrc: false,
-      plugins: [],
-      presets: [
-        [
-          '@babel/preset-env', 
-          {
-            // false means polyfill not required runtime
-            useBuiltIns: false
-          },
-        ],
-      ]
-    }
-  };
-
-  return R.pipe(
-    setEntry('js/bundle', './js/main.es6'),
-    addRule(rule),
-    prependExtensions(['es6', '.jsx', '.js', '.json'])
-  )(cfg);
-}
-
 // ----------------------------------------------------------------------------
 // CSS loaders
 // ----------------------------------------------------------------------------
@@ -155,7 +127,6 @@ function addFontSupport(cfg) {
 // ----------------------------------------------------------------------------
 
 module.exports = R.pipe(
-  addBabelSupport,
   addTypeScriptSupport,
   addSassSupport,
   addFontSupport

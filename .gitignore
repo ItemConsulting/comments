@@ -1,5 +1,5 @@
 ### Enonic CLI ###
-.enonic
+enonic/.enonic
 
 ### OSX ###
 .DS_Store
@@ -95,8 +95,8 @@ crashlytics-build.properties
 
 
 ### Node ###
-node_modules
-npm-debug.log
+enonic/node_modules
+enonic/npm-debug.log
 
 ### Project ###
 *.map
