@@ -1,0 +1,7 @@
+@use './colors';
+@function calculateRem($size, $base-size: 19px) {
+  $remSize: $size / $base-size;
+  @return #{$remSize}rem;
+}
+
+$input-border: calculateRem(2px) solid colors.$gray;
