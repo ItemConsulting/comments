@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content-type>
+    <display-name i18n="comment.displayName">Comment</display-name>
+    <description i18n="comment.description">Comment - can be used to leave comments</description>
+    <super-type>base:structured</super-type>
+
+    <form>
+        <input name="title" type="TextLine">
+            <label i18n="comment.label.title">Title</label>
+            <occurrences minimum="1" maximum="1"/>
+        </input>
+
+        <input name="body" type="TextArea">
+            <label i18n="comment.label.body">Body</label>
+            <occurrences minimum="1" maximum="1"/>
+        </input>
+
+        <input name="parentId" type="ContentSelector">
+            <label i18n="comment.label.parentId">ParentId</label>
+            <occurrences minimum="0" maximum="1"/>
+            <config>
+                <allowContentType>comment</allowContentType>
+                <treeMode>true</treeMode>
+                <showStatus>true</showStatus>
+                <hideToggleIcon>true</hideToggleIcon>
+            </config>
+        </input>
+    </form>
+</content-type>
