@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content-type>
     <display-name i18n="comment.displayName">Comment</display-name>
-    <display-name i18n="comment.description">Comment - can be used to leave comments</display-name>
+    <description i18n="comment.description">Comment - can be used to leave comments</description>
     <super-type>base:structured</super-type>
 
     <form>
@@ -11,7 +11,7 @@
         </input>
 
         <input name="body" type="TextArea">
-            <label i18n="comment.label.comment">Body</label>
+            <label i18n="comment.label.body">Body</label>
             <occurrences minimum="1" maximum="1"/>
         </input>
 
