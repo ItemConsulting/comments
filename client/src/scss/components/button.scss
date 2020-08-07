@@ -1,0 +1,7 @@
+@use '../colors';
+@use '../variables';
+.btn {
+  color: colors.$black;
+  background-color: colors.$white;
+  border: variables.$input-border;
+}
