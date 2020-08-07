@@ -16,7 +16,6 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.11.1",
-    "@fullhuman/postcss-purgecss": "^2.3.0",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-info": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
