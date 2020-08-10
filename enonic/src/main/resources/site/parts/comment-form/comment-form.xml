@@ -1,0 +1,4 @@
+<part>
+    <display-name i18n="commentForm.displayName">Comment form</display-name>
+    <description i18n="commentForm.description">Edit the comment</description>
+</part>

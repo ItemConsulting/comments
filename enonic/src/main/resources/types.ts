@@ -6,6 +6,7 @@ declare const resolve: (path: string) => any;
 declare const app: {
   name: string,
   version: string
+  config: { [key: string]: string }
 }
 
 declare const log: {

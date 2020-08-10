@@ -1,0 +1,7 @@
+<page>
+    <display-name>Default page</display-name>
+    <description>Default page</description>
+    <regions>
+        <region name="main"></region>
+    </regions>
+</page>
