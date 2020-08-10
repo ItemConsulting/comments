@@ -1,0 +1,18 @@
+<h2 data-th-text="${title}">Title</h2>
+<p data-th-text="${body}">Article</p>
+
+
+<form data-th-action="${serviceUrl}" method="post">
+  <input type="text" name="title">
+  <textarea name="body"></textarea>
+  <input type="hidden" data-th-value="${parentPath}" name="parentPath">
+  <input type="hidden" data-th-value="${pathSelf}" name="pathSelf">
+  <button type="submit">Comment</button>
+</form>
+
+<ul >
+  <li data-th-each="comment : ${comments}">
+    <span data-th-text="${comment.title}"></span>
+    <span data-th-text="${comment.body}"></span>
+  </li>
+</ul>
