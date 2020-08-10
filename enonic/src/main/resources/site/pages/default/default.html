@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html data-th-attr="lang=${lang}" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#f6f6f3">
+
+    <title data-th-text="${title}">Page</title>
+    <link
+            rel="stylesheet"
+            data-th-href="${portal.assetUrl({'_path=design-system/bundle.css'})}"
+            href="../../../assets/design-system/bundle.css" />
+</head>
+
+<body>
+<main
+        id="start-of-content"
+        data-portal-region="main">
+<!--     Main Region -->
+    <div
+            data-th-each="component : ${mainRegion.components}"
+            data-th-remove="tag">
+
+        <div
+                data-portal-component="${component.path}"
+                data-th-remove="tag">
+        </div>
+    </div>
+</main>
+
+<script
+        nomodule
+        data-th-src="${portal.assetUrl({'_path=design-system/bundle.es5.js'})}"
+        src="../../../assets/design-system/bundle.es5.js">
+</script>
+
+<script
+        type="module"
+        data-th-src="${portal.assetUrl({'_path=design-system/bundle.js'})}"
+        src="../../../assets/design-system/bundle.js">
+</script>
+</body>
+</html>
