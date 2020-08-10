@@ -1,0 +1,31 @@
+import {Request, Response} from "enonic-types/lib/controller";
+import {pipe} from "fp-ts/lib/pipeable";
+import {fold} from "fp-ts/lib/IOEither";
+import {errorResponse, redirect} from "enonic-wizardry/lib/controller";
+import {forceArray} from "enonic-wizardry/lib/array";
+import {createAndPublish} from "enonic-wizardry/lib/content";
+import {sanitize} from "enonic-fp/lib/common";
+
+export function post(req: Request): Response {
+  const title = forceArray(req.params.title)[0]
+  const body = forceArray(req.params.body)[0]
+  const parentPath = forceArray(req.params.parentPath)[0]
+  const pathSelf = forceArray(req.params.pathSelf)[0]
+
+  return pipe(
+    createAndPublish({
+      parentPath,
+      data: {
+        title,
+        body
+      },
+      name: sanitize(title),
+      displayName: title,
+      contentType:`${app.name}:comment`
+    }),
+    fold(
+      errorResponse('commentService', true),
+      () => redirect(pathSelf)
+    )
+  )()
+}
