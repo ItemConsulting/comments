@@ -1,7 +1,26 @@
 @use '../colors';
 @use '../variables';
 .btn {
+  padding: .5rem 1rem;
   color: colors.$black;
   background-color: colors.$white;
   border: variables.$input-border;
+}
+.comment-btn-primary {
+  @extend .btn;
+  color: white;
+  background-color: darkgreen;
+  border: variables.borderWithColor(darkgreen);
+}
+.comment-btn-secondary {
+  @extend .btn;
+  color: darkgreen;
+  background-color: white;
+  border: variables.borderWithColor(darkgreen);
+}
+.comment-button {
+  @extend .btn;
+  background-color: #030339;
+  color: white;
+  border: variables.borderWithColor(#030339);
 }

@@ -3,5 +3,14 @@
   $remSize: $size / $base-size;
   @return #{$remSize}rem;
 }
-
+@function borderWithColor($color : colors.$gray) {
+  @return calculateRem(2px) solid $color
+}
 $input-border: calculateRem(2px) solid colors.$gray;
+
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+);

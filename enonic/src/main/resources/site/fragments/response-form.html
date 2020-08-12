@@ -1,0 +1,30 @@
+<form class="comment-form"
+      data-th-fragment="responseForm"
+      data-th-action="${serviceUrl}"
+      method="post">
+  <label class="comment-form-label"
+         data-th-text="${portal.localize({'_key=comment.form.label.title'})}"
+         data-th-for="${'comment-title-' + comment._id}">Title</label>
+  <input class="comment-form-input"
+         data-th-id="${'comment-title-' + comment._id}" name="title"
+         type="text">
+  <label class="comment-form-label"
+         data-th-text="${portal.localize({'_key=comment.form.label.body'})}"
+         data-th-for="${'comment-body-'+comment._id}">Reply</label>
+  <textarea class="comment-form-textarea"
+            data-th-id="${'comment-body-'+comment._id}"
+            name="body"></textarea>
+  <input data-th-value="${parentPath}"
+         name="parentPath"
+         type="hidden">
+  <input data-th-value="${pathSelf}"
+         name="pathSelf"
+         type="hidden">
+  <input data-th-value="${comment._id}"
+         name="parentId"
+         type="hidden">
+  <div class="comment-form-button-wrapper">
+    <button class="comment-btn-secondary" type="reset">Cancel</button>
+    <button class="comment-btn-primary" type="submit">Reply</button>
+  </div>
+</form>
