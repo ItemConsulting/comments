@@ -1,0 +1,68 @@
+@use '../mixins';
+@use '../variables';
+.comment-form {
+  display: grid;
+  grid-template-areas:
+        "title title"
+        "title-input title-input"
+        "body body"
+        "body-text body-text"
+        "buttons buttons";
+
+  .comment-form-label:first-child {
+    grid-area: title;
+    margin-bottom: .5rem;
+  }
+  .comment-form-input {
+    grid-area: title-input;
+    padding: .2rem .1rem;
+    border: variables.borderWithColor();
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+  .comment-form-label:nth-child(3) {
+    grid-area: body;
+    margin-bottom: .5rem;
+  }
+  .comment-form-textarea {
+    grid-area: body-text;
+    border: variables.borderWithColor();
+    border-radius: 2px;
+    min-height: 3rem;
+    height: 5rem;
+    margin-bottom: 1.5rem;
+  }
+  .comment-form-button-wrapper {
+    grid-area: buttons;
+    display: flex;
+    justify-content: flex-end;
+    button {
+      margin: 0 .2rem;
+    }
+  }
+  button[type='submit'] {
+    grid-area: buttons;
+    justify-self: end;
+  }
+}
+
+details {
+  summary {
+    margin-bottom: .5rem;
+    padding: .5rem 1rem;
+    border: variables.borderWithColor(darkgreen);
+    background: darkgreen;
+    color: white;
+    width: fit-content;
+  }
+  .comment-form {
+    background-color: darkgreen;
+    padding: 1rem;
+    label {
+      color: white;
+    }
+    button {
+      border: variables.borderWithColor(white);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<form class="comment-form" data-th-action="${serviceUrl}" method="post" data-th-fragment="commentForm">
+  <label class="comment-form-label"
+         data-th-text="${portal.localize({'_key=comment.form.label.title'})}"
+         for="comment-title">Title</label>
+  <input id="comment-title"
+         class="comment-form-input"
+         name="title"
+         type="text">
+  <label class="comment-form-label"
+         data-th-text="${portal.localize({'_key=comment.form.label.body'})}"
+         for="comment-body">Comment</label>
+  <textarea id="comment-body"
+            class="comment-form-textarea"
+            name="body"></textarea>
+  <input data-th-value="${parentPath}" name="parentPath" type="hidden">
+  <input data-th-value="${pathSelf}" name="pathSelf" type="hidden">
+  <button class="comment-btn-primary" type="submit">Comment</button>
+</form>

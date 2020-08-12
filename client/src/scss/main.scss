@@ -1,4 +1,7 @@
 @forward "./colors";
+@forward "./mixins";
 @forward "./variables";
 
 @forward "./components/button";
+@forward "./components/comments";
+@forward "./components/comments-form";

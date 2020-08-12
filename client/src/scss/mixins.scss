@@ -1,0 +1,12 @@
+@use 'variables';
+
+@mixin respond-above($breakpoint) {
+  @if map-has-key(variables.$breakpoints, $breakpoint) {
+    $breakpoint-value: map-get(variables.$breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
