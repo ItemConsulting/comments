@@ -1,4 +1,4 @@
-<form class="comment-form" data-th-action="${serviceUrl}" method="post" data-th-fragment="commentForm">
+<form class="comment-form" data-th-action="${serviceUrl}" method="post" data-th-fragment="commentForm" data-th-if="${isAuthenticated}">
   <label class="comment-form-label"
          data-th-text="${portal.localize({'_key=comment.form.label.title'})}"
          for="comment-title">Title</label>
@@ -14,5 +14,5 @@
             name="body"></textarea>
   <input data-th-value="${parentPath}" name="parentPath" type="hidden">
   <input data-th-value="${pathSelf}" name="pathSelf" type="hidden">
-  <button class="comment-btn-primary" type="submit">Comment</button>
+  <button class="comment-btn-primary" type="submit" data-th-text="${portal.localize({'_key=comment.form.label.comment'})}">Comment</button>
 </form>

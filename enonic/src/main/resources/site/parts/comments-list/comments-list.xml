@@ -1,0 +1,30 @@
+<part>
+  <display-name i18n="commentList.displayName">List of comments</display-name>
+  <description i18n="commentList.description">View all the comments</description>
+  <form>
+    <input type="RadioButton" name="headingTag">
+      <label i18n="commentList.headingTag">Heading tag</label>
+      <occurrences minimum="1" maximum="1"></occurrences>
+      <default>h4</default>
+      <config>
+        <option value="h2">H2</option>
+        <option value="h3">H3</option>
+        <option value="h4">H4</option>
+        <option value="h5">H5</option>
+      </config>
+    </input>
+    <input type="RadioButton" name="includeCss">
+      <label i18n="commentList.includeCss">Include Default CSS</label>
+      <occurrences minimum="1" maximum="1"></occurrences>
+      <default>true</default>
+      <config>
+        <option value="true" i18n="comment.yes">Yes</option>
+        <option value="false" i18n="comment.no">NO</option>
+      </config>
+    </input>
+    <input name="loginPageId" type="ContentSelector">
+      <label i18n="commentList.label.loginPageId">Login page</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+  </form>
+</part>

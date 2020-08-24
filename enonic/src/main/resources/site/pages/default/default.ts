@@ -1,7 +1,6 @@
-import {ThymeleafLibrary} from "enonic-types/lib/thymeleaf";
 import {pipe} from "fp-ts/lib/pipeable";
 import {getContent} from "enonic-fp/lib/portal";
-import { fold, map, chain } from "fp-ts/lib/IOEither";
+import {chain, fold, map} from "fp-ts/lib/IOEither";
 import {errorResponse, ok} from "enonic-wizardry/lib/controller";
 import {Content} from "enonic-types/lib/content";
 import {Region} from "enonic-types/lib/portal";
