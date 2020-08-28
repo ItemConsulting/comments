@@ -1,5 +1,5 @@
 <article class="comment-comment-wrapper" data-th-fragment="comment">
-  <h3 data-th-if="${!isResponse}" class="comment-comment-title" data-th-text="${comment.data.title}">Title</h3>
-  <h4 data-th-if="${isResponse}" class="comment-response-title" data-th-text="${comment.data.title}">Title</h4>
-  <p data-th-class="${isResponse} ? 'comment-response-body':'comment-comment-body'" data-th-text="${comment.data.body}">Comment</p>
+  <h4 data-th-utext="${comment.heading}" data-th-remove="tag">This is the title</h4>
+  <p data-th-class="${isResponse} ? 'comment-response-body':'comment-comment-body'" data-th-text="${comment.body}">Comment</p>
+  <p><span data-th-text="${comment.creatorDisplayName}" data-th-remove="tag">Creator</span> (<time data-th-attr="datetime=${comment.createdTime}" data-th-text="${comment.createdTimeDisplay}"></time>)</p>
 </article>

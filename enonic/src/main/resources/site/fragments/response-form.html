@@ -1,6 +1,7 @@
 <form class="comment-form"
       data-th-fragment="responseForm"
       data-th-action="${serviceUrl}"
+      data-th-if="${isAuthenticated}"
       method="post">
   <label class="comment-form-label"
          data-th-text="${portal.localize({'_key=comment.form.label.title'})}"
@@ -9,7 +10,7 @@
          data-th-id="${'comment-title-' + comment._id}" name="title"
          type="text">
   <label class="comment-form-label"
-         data-th-text="${portal.localize({'_key=comment.form.label.body'})}"
+         data-th-text="${portal.localize({'_key=comment.form.label.reply'})}"
          data-th-for="${'comment-body-'+comment._id}">Reply</label>
   <textarea class="comment-form-textarea"
             data-th-id="${'comment-body-'+comment._id}"
@@ -24,7 +25,13 @@
          name="parentId"
          type="hidden">
   <div class="comment-form-button-wrapper">
-    <button class="comment-btn-secondary" type="reset">Cancel</button>
-    <button class="comment-btn-primary" type="submit">Reply</button>
+    <button class="comment-btn-secondary"
+            type="reset"
+            data-th-text="${portal.localize({'_key=comment.cancel'})}"
+            >Cancel</button>
+    <button class="comment-btn-primary"
+            type="submit"
+            data-th-text="${portal.localize({'_key=comment.form.label.reply'})}"
+            >Reply</button>
   </div>
 </form>

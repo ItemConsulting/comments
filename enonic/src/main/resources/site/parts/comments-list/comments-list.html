@@ -1,0 +1,42 @@
+<details class="comment-toggle" data-th-if="${isAuthenticated}">
+  <summary class="comment-toggle-button"
+           data-th-if="${isAuthenticated}"
+           data-th-text="${portal.localize({'_key=comment.form.toggle.comment.text'})}">
+    Leave a comment
+  </summary>
+  <div data-th-replace="/site/fragments/comment-form :: commentForm(parentPath=${parentPath})"></div>
+</details>
+
+<a data-th-href="${loginUrl}"
+   data-th-if="${!isAuthenticated}"
+   data-th-text="${portal.localize({'_key=comment.form.login'})}">Log in to leave a comment
+</a>
+<a data-th-href="${logOut}"
+   data-th-if="${isAuthenticated}"
+   data-th-text="${portal.localize({'_key=comment.form.logout'})}">Log out
+</a>
+
+
+<ul class="comment-comment-list">
+  <li class="comment-comment-list-item" data-th-each="comment: ${comments}">
+    <div data-th-replace="/site/fragments/comment :: comment(isResponse=${false})"></div>
+<!--  respond to comment  -->
+    <details class="comment-toggle"
+             data-th-if="${isAuthenticated}">
+      <summary class="comment-toggle-button"
+               data-th-if="${isAuthenticated}"
+               data-th-text="${portal.localize({'_key=comment.form.toggle.reply.text'})}">
+        Respond to comment
+      </summary>
+      <div data-th-replace="/site/fragments/response-form :: responseForm"></div>
+    </details>
+    <!--  END respond to comment  -->
+    <!--  Responses  -->
+    <ul class="comment-response-list">
+      <li class="comment-response-list-item" data-th-each="child: ${comment.children}">
+        <div data-th-replace="/site/fragments/comment :: comment(comment=${child}, isResponse=${true})"></div>
+      </li>
+    </ul>
+    <!--  END Responses  -->
+  </li>
+</ul>
